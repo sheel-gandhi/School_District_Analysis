@@ -62,11 +62,11 @@ Original and adjusted math average scores
 Original and adjusted reading average scores
 ![reading_average_comparision](https://user-images.githubusercontent.com/108366412/181617566-1573b776-5b7c-442c-9e9d-a3bf07c839bd.png)
 
-  * Scores by school spending
+  * Scores by school spending 
   
-   Thomas High School is part of the 631-645 spending group which is nominally affected by the removal of the 9th grade scores. From the below images we can see that originally the overall passing percentage is 62.86% which is updated to 62.78%. This difference can only be found at the tenth place. Data seems to remain same when we are rounding off the percentages to zero decimal points. 
+   Thomas High School is part of the $631-$645 spending group which is nominally affected by the removal of the 9th grade scores. From the below images we can see that originally the overall passing percentage is 62.86% which is updated to 62.78%. This difference can only be found at the tenth place. Data seems to remain same when we are rounding off the percentages to zero decimal points. 
    
-Thomas High School spending range
+Thomas High School spending range ($631-$645)
 ![Thomas_High_School_spendingrange](https://user-images.githubusercontent.com/108366412/181604007-254162fc-5a3a-4d12-8e1f-08d21b26dbfe.png)
 
 Original scores by school spending
