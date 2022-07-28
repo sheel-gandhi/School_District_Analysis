@@ -7,50 +7,47 @@ Maria, a chief data scientist at City School District responsible for analysing 
 
 The school data, which was given to us in 2 csv files, were merged into one complete file, scrutinized for any missing data and a summary report was build showing performance of each school with its average math and reading score, passing percentage in math and reading and overall student passing percentage. We also ran summary report based on school size, school budget and type of school.
 
-Now, we need to address an issue which was brought to the school board regarding academic dishonesty by Thomas High School specifically for its 9th grade students. With this new revelation. We need to remove all the incorrect scores (replace them with NaN) for Thomas High School 9th grade students, and update summary reports to show the actual numbers to the board.
+Now, we need to address an issue which was brought to the school board regarding academic dishonesty by Thomas High School specifically for its 9th grade students. With this new revelation, we need to remove all the incorrect scores (replace them with NaN) for Thomas High School 9th grade students, and update summary reports to show the actual numbers to the board.
 
 ## Results
 
 ### How is the district summary affected?
 
 Original summary
-
 ![image](https://user-images.githubusercontent.com/108366412/181427756-02c59ece-d627-446d-bc4d-ce4d1f2279ad.png)
  
-The grades for Thomas High School 9th grade students (491 students) were changed to NaN after which new district summary was ran. Loc function was used to replace the values to NaN. student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan
+The scores for Thomas High School 9th grade students (491 students) were changed to NaN after which new district summary was ran. Loc function was used to replace the values to NaN. 
+
+student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan
 
 Adjusted summary
-
 ![image](https://user-images.githubusercontent.com/108366412/181427818-5ec8dd6b-3775-437c-a5c6-a84ba7862ccf.png)
 
 From the numbers we can see there is a nominal change in the passing percentage of 0.2%, 0.1% and 0.3% in math, reading and overall percentages respectively. Data of 491 students was changed out of a pool of 39170 students. Thus, only minor difference in passing percentages can be seen which if rounded off to zero decimal, may not show any difference in the adjusted summary. The number of students and total budget remained as is as they were run on the original school data which was unchanged. 
 
 ### How is the school summary affected?
 
-Grades of 491 students from Thomas High School 9th grade were replaced with NaN which led to the updated school summary. A huge drop in passing percentage in math, reading and overall passing can be seen. Passing Math % dropped from 93.27% to 66.91%, reading from 97.31% to 69.66% and overall % dropped from 90.95% to 65.08% respectively.
+A huge drop in passing percentage in math, reading and overall passing can be seen in Thomas High School summary. Passing Math % dropped from 93.27% to 66.91%, reading from 97.31% to 69.66% and overall % dropped from 90.95% to 65.08% respectively.
 
 Original Thomas High School summary
-
 ![image](https://user-images.githubusercontent.com/108366412/181428069-c71e8e40-e99c-471d-a06a-af14b12e8504.png)
 
 Adjusted Thomas High School summary
-
 ![image](https://user-images.githubusercontent.com/108366412/181428082-a1061342-f37b-455c-afd9-8f854845b394.png)
 
 ### How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
 
-With the 9th grade scores replaced to NaNs (keeping student count as is), the overall passing percentage for Thomas High School dropped from 90.95% to 65.08% which led to its rank dropping from 2nd to 8th position. Once we updated the number of students to just 10th, 11th and 12th grade students, we were able to get updated ranking which shows Thomas High School is back at 2nd position with overall percentage of 90.63%
-
 Original Ranking
-
 ![image](https://user-images.githubusercontent.com/108366412/181428228-50590bfb-bb76-4012-89ed-48533ec9ea22.png)
 
-Ranking including 9th grade with NaN and total student id
+With the 9th grade scores replaced to NaNs (keeping student count as is), the overall passing percentage for Thomas High School dropped from 90.95% to 65.08% which led to its rank dropping from 2nd to 8th position. 
 
+Ranking including 9th grade with NaN and total student id
 ![image](https://user-images.githubusercontent.com/108366412/181428261-b1b1ba66-6b41-4deb-aa1d-2db7a0ba8de6.png)
 
-Ranking excluding 9th grade
+Once we updated the number of students to just 10th, 11th and 12th grade students, we were able to get updated ranking which shows Thomas High School is back at 2nd position with overall percentage of 90.63%
 
+Ranking excluding 9th grade
 ![image](https://user-images.githubusercontent.com/108366412/181428365-6fbbf0ee-a147-42a6-bf59-75c80dba58d3.png)
 
 ### How does replacing the ninth-grade scores affect the following:
@@ -60,14 +57,13 @@ Ranking excluding 9th grade
     Average scores for all the grades for all schools remain the same except the 9th grade scores for Thomas High School which were at 83.7 for reading and 83.6 for math. Now both these values are replaced by nan. 
 
 Original and adjusted math average scores
-
-![image](https://user-images.githubusercontent.com/108366412/181428674-a34cc60e-94af-4eb3-a984-6e2a20900637.png)  ![image](https://user-images.githubusercontent.com/108366412/181428819-a9478592-b23c-42c1-91a7-e604dc4c6a94.png) 
+![math_average_comparison](https://user-images.githubusercontent.com/108366412/181432262-c390f248-5342-4b3e-9675-4784d68391ff.png)
 
 Original and adjusted reading average scores
-
-![image](https://user-images.githubusercontent.com/108366412/181428971-97520155-fe83-40f1-92be-e5877fd047a3.png)  ![image](https://user-images.githubusercontent.com/108366412/181428996-7176b43c-c54a-40a0-bd4b-cb0eec00bc01.png)
+![reading_avg_comparison](https://user-images.githubusercontent.com/108366412/181432294-d2564db4-d990-46a7-89f2-640ffa4d2167.png)
 
   * Scores by school spending
+  
     Thomas High School is part of the 631-645 spending group which is nominally affected by the removal of the 9th grade scores. From the below images we can see that originally the overall passing percentage is 62.86% which is updated to 62.78%. This difference can only be found at the tenth place. Data seems to remain same when we are rounding off the percentages to zero decimal points. 
 
 Original scores by school spending
