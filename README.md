@@ -9,6 +9,8 @@ The school data, which was given to us in 2 csv files, were merged into one comp
 
 Now, we need to address an issue which was brought to the school board regarding academic dishonesty by Thomas High School specifically for its 9th grade students. With this new revelation, we need to remove all the incorrect scores (replace them with NaN) for Thomas High School 9th grade students, and update summary reports to show the actual numbers to the board.
 
+Softwares Used: Anaconda, Conda, Jupyter-Notebook, ipykernal, Python, Pandas, Numpy, GitBash 
+
 ## Results
 
 ### How is the district summary affected?
